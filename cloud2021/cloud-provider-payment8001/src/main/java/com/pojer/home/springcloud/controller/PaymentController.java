@@ -3,6 +3,7 @@ package com.pojer.home.springcloud.controller;
 import com.pojer.home.springcloud.entities.CommonResult;
 import com.pojer.home.springcloud.entities.Payment;
 import com.pojer.home.springcloud.service.PaymentService;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
@@ -19,6 +20,7 @@ import javax.annotation.Resource;
  */
 @RestController
 @RequestMapping("/payment")
+@Slf4j
 public class PaymentController {
 
     private Logger log = LoggerFactory.getLogger(PaymentController.class);
@@ -27,7 +29,7 @@ public class PaymentController {
     private PaymentService paymentService;
 
     @PostMapping(value = "/create")
-    public CommonResult create(Payment payment){
+    public CommonResult create(@RequestBody Payment payment){
         int result = paymentService.create(payment);
         log.info("******插入结果："+result);
 
