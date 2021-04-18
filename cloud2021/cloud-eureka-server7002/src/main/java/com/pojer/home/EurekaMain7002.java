@@ -1,21 +1,21 @@
-package com.pojer.home.springcloud;
+package com.pojer.home;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
 /**
  * Created with IntelliJ IDEA.
  *
  * @Auther: pojer
- * @Date: 2021/04/15/下午 7:36
+ * @Date: 2021/04/18/下午 9:22
  * @Description:
  */
 @SpringBootApplication
-@EnableDiscoveryClient
-public class OrderMain80 {
+@EnableEurekaServer
+public class EurekaMain7002 {
 
     public static void main(String[] args) {
-        SpringApplication.run(OrderMain80.class);
+        SpringApplication.run(EurekaMain7002.class);
     }
 }

@@ -9,7 +9,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
 
 /**
@@ -26,11 +25,11 @@ public class PaymentController {
 
     private Logger log = LoggerFactory.getLogger(PaymentController.class);
 
-    @Resource
-    private PaymentService paymentService;
-
     @Value("${server.port}")
     private String serverPort;
+
+    @Resource
+    private PaymentService paymentService;
 
     @PostMapping(value = "/create")
     public CommonResult create(@RequestBody Payment payment){
@@ -50,7 +49,7 @@ public class PaymentController {
         log.info("******查询结果："+result);
 
         if (result != null){
-            return new CommonResult(200,"查询数据成功，ServerPort："+serverPort,result);
+            return new CommonResult(200,"查询数据成功,serverPort:"+serverPort,result);
         }else {
             return new CommonResult(400, "查询失败,查询Id:"+id);
         }

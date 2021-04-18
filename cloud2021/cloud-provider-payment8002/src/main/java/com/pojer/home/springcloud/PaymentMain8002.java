@@ -5,17 +5,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
- * Created with IntelliJ IDEA.
- *
- * @Auther: pojer
- * @Date: 2021/04/15/下午 7:36
- * @Description:
- */
+* @Author: pojer
+* @Date: 2021/4/14 0014
+*/
+
 @SpringBootApplication
 @EnableDiscoveryClient
-public class OrderMain80 {
+public class PaymentMain8002 {
 
     public static void main(String[] args) {
-        SpringApplication.run(OrderMain80.class);
+        SpringApplication.run(PaymentMain8002.class);
     }
 }
