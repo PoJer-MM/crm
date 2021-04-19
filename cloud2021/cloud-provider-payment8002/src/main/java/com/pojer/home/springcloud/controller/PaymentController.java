@@ -1,5 +1,6 @@
 package com.pojer.home.springcloud.controller;
 
+import com.netflix.discovery.DiscoveryClient;
 import com.pojer.home.springcloud.entities.CommonResult;
 import com.pojer.home.springcloud.entities.Payment;
 import com.pojer.home.springcloud.service.PaymentService;
@@ -10,6 +11,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -30,6 +32,9 @@ public class PaymentController {
 
     @Resource
     private PaymentService paymentService;
+
+    @Resource
+    private DiscoveryClient discoveryClient;
 
     @PostMapping(value = "/create")
     public CommonResult create(@RequestBody Payment payment){
@@ -54,4 +59,9 @@ public class PaymentController {
             return new CommonResult(400, "查询失败,查询Id:"+id);
         }
     }
+
+//    @GetMapping("/payment/discovery")
+//    public Object discovery(){
+//        List<String> services = discoveryClient.getInstanceRemoteStatus()
+//    }
 }

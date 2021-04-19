@@ -3,10 +3,10 @@ server:
 
 eureka:
   instance:
-    hostname: localhost
+    hostname: eurekapojer
   #    hostname: eureka7002.com
   client:
-    register-with-eureka: false
+    register-with-eureka: true
     fetch-registry: false
     service-url:
       defaultZone: http://${eureka.instance.hostname}:7001/eureka/
