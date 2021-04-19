@@ -10,8 +10,8 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 */
 
 @SpringBootApplication
-//@EnableDiscoveryClient
 @EnableDiscoveryClient
+//@EnableDiscoveryClient
 public class PaymentMain8002 {
 
     public static void main(String[] args) {
