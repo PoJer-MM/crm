@@ -55,4 +55,9 @@ public class PaymentController {
             return new CommonResult(400, "查询失败,查询Id:"+id);
         }
     }
+
+    @GetMapping("/lb")
+    public String getServerPort(){
+        return serverPort;
+    }
 }

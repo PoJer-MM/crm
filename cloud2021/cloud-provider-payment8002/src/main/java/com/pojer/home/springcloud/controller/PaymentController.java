@@ -60,6 +60,11 @@ public class PaymentController {
         }
     }
 
+    @GetMapping("/lb")
+    public String getServerPort(){
+        return serverPort;
+    }
+
 //    @GetMapping("/payment/discovery")
 //    public Object discovery(){
 //        List<String> services = discoveryClient.getInstanceRemoteStatus()
