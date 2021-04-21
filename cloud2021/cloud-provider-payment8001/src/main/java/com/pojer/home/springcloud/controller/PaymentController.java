@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created with IntelliJ IDEA.
@@ -58,6 +59,17 @@ public class PaymentController {
 
     @GetMapping("/lb")
     public String getServerPort(){
+        return serverPort;
+    }
+
+    @GetMapping("/feign/timeout")
+    public String getFeignTimeOut(){
+        //暂停几秒线程
+        try {
+            TimeUnit.SECONDS.sleep(3);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return serverPort;
     }
 }
